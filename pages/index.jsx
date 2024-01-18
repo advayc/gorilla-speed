@@ -2,6 +2,7 @@ import React from 'react';
 import CPS from '@/components/cps.jsx';
 import Navbar from '@/components/navbar.jsx';
 import styles from '@/styles/Home.module.css';
+import Footer from '@/components/footer';
 
 export default function Home() {
 
