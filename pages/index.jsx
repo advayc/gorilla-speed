@@ -1,20 +1,21 @@
-import { Inter } from 'next/font/google';
-import styles from '@/styles/Home.module.css';
+import React from 'react';
+import CPS from '@/components/cps.jsx';
 import Navbar from '@/components/navbar.jsx';
-
-const inter = Inter({ subsets: ['latin'] })
+import styles from '@/styles/Home.module.css';
 
 export default function Home() {
+
   return (
-    <main className={styles.main}>
-      <div className={styles.container}>
-      <h1 className="title">
-        Welcome to Gorilla Type
-      </h1>
-      <h5 className="description">
-        The best way to test your typing
-      </h5>
-      </div>
-    </main>
+      <main className={styles.main}>
+      <Navbar />
+        <div className={`${styles.container} ${styles.fadeIn}`}>
+          <h1 className={styles.title}>
+            Welcome to Gorilla Speed
+          </h1>
+          <h5 className={styles.description}>
+            The best way to test your typing and clicking speed
+          </h5>
+        </div>
+      </main>
   )
 }

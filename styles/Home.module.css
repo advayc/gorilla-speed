@@ -1,4 +1,72 @@
 .container {
-    position: absolute;
-    bottom: 50%;
-  }
+  height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}
+
+.fadeIn {
+  opacity: 0;
+  animation: fadeInAnimation 3s forwards;
+}
+
+.clicking {
+  display: flex;
+  justify-content: center;
+}
+
+.clickbutton {
+  width: 100%;
+  height: 300px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 40px;
+  background-color: black;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.clickbutton:hover {
+  cursor: pointer;
+  background-color: #191919; 
+}
+
+.clickbutton:active {
+  cursor: pointer;
+  background-color: #2b2b2b; 
+}
+
+.timer {
+  margin-right: 12rem;
+}
+
+.clicks, .timer {
+  padding: 0.5rem 3.5rem 0.5rem 3.5rem;
+  background-color: black;
+  border-radius: 20px;
+}
+
+.clicknum, .timernum {
+  margin-left: 1rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: white;
+}
+
+.cpsContainer {
+  background-color: #191919;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  padding-bottom: 3rem;
+  border-radius: 40px;
+  padding-top: 20px;
+}
+
+@keyframes fadeInAnimation {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

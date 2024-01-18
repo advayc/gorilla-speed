@@ -5,9 +5,12 @@ const Navbar = () => {
         <nav className="navbar">
             <ul className='navbar-text'>
                 <Link className='navbar-element' href="/">Home</Link>
+                <Link className='navbar-element' href="/clicks">Clicking Speed</Link>
+                <Link className='navbar-element' href="/">Typing Speed</Link>
             </ul>
         </nav>
     );
 };
 
 export default Navbar;
+

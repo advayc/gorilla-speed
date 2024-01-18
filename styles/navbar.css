@@ -1,19 +1,24 @@
 .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
     display: flex;
-    
+    justify-content: center;
+    margin-top: 25px;
 }
 
 .navbar-element {
-    font-size: 16px;
+    margin: 0 0.75rem 0 0.99rem;
+    font-size: 20px;
     padding: 10px;
     cursor: pointer;
     transition: color 0.15s cubic-bezier(0.4, 0, 0.2, 1) 50ms;
 }
 
 .navbar-text {
-    margin-bottom: 3rem;
-    
     padding: 10px;
+
 }
 
 .navbar-element:hover {
