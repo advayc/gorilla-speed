@@ -16,6 +16,7 @@ export default function Home() {
             The best way to test your typing and clicking speed
           </h5>
         </div>
+        <Footer />
       </main>
   )
 }
