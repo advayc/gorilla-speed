@@ -1,0 +1,26 @@
+.footer-container {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer-container a {
+    text-decoration: none;
+  }
+  
+  .creators-list {
+    margin-top: 10px;
+  }
+  
+  .creator-link {
+    font-weight: bold;
+    color: #805ad5; 
+    transition: all 0.3s ease;
+  }
+  
+  .creator-link:hover {
+    color: #ffffff; 
+  }
+  
