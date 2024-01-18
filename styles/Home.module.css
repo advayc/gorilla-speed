@@ -37,6 +37,19 @@
   background-color: #191919; 
 }
 
+@media screen and (max-width: 375px) and (max-height: 667px) {
+  .container {
+    height: 50%;
+  }
+
+  .clickbutton {
+    width: 50%;
+    height: 50%;
+    font-size: 20px;
+  }
+
+}
+
 .clickbutton:active {
   cursor: pointer;
   background-color: #2b2b2b; 
@@ -71,4 +84,44 @@
 @keyframes fadeInAnimation {
   0% { opacity: 0; }
   100% { opacity: 1; }
+}
+
+.input {
+  width: 100%;
+  align-items: center;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  padding-bottom: 220px;
+  border: none; 
+  background-color: black;
+  transition: background-color 0.3s ease;
+  font-size: 20px;
+  font-family: 'Roboto Slab', sans-serif;
+  white-space: pre-wrap; 
+  padding-bottom: 220px;
+  border: none; 
+  overflow-wrap: break-word; 
+  color: transparent; 
+  background-color: black;
+  z-index: 4;
+  line-height: 1.5; 
+}
+
+.placeholder {
+  position: absolute;
+  transition: background-color 0.3s ease;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  font-size: 20px;
+  padding: 10px; 
+  font-size: 20px;
+  line-height: 1.5; 
+}
+
+.textarea {
+  position: relative;
 }

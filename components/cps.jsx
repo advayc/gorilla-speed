@@ -57,7 +57,7 @@ export default function CPS() {
 
   return (
     <div>
-      <h2 className={styles.subtitle}>Test Your Click Speed</h2>
+      <h2 className={styles.subtitle}>Test Your Click Speed!</h2>
       <div className={styles.cpsContainer}>
         <div className={styles.clicking}>
           <div className={styles.timer}>
