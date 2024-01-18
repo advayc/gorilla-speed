@@ -17,8 +17,8 @@ export default function CPS() {
   const handleClick = () => {
     if (!isRunning) {
       setIsRunning(true);
-      setClicks(0);
       setCountdown(0.00);
+      setClicks(0);
       const interval = setInterval(() => {
         setCountdown((prevCountdown) => {
           if (prevCountdown < 10.00) {
@@ -26,46 +26,54 @@ export default function CPS() {
           } else {
             clearInterval(interval);
             setIsRunning(false);
-            handleGameOver();
             return prevCountdown;
           }
         });
       }, 10);
     } else {
-      setClicks((prevClicks) => prevClicks + 1);
+      setClicks((prevClicks) => {
+        const newClicks = prevClicks + 1;
+        if (newClicks > maxClicks) {
+          setMaxClicks(newClicks);
+          localStorage.setItem('maxClicks', newClicks);
+        }
+        return newClicks;
+      });
     }
   };
 
-  const handleGameOver = () => {
-    if (clicks > maxClicks) {
-      setMaxClicks(clicks);
-      localStorage.setItem('maxClicks', clicks);
+  useEffect(() => {
+    if (!isRunning) {
+      handleGameOver();
     }
+  }, [isRunning]);
+
+  const handleGameOver = () => {
     window.alert(`Game over, your clicks: ${clicks}, max clicks: ${maxClicks}`);
   };
 
   return (
     <div>
-    <h2 className={styles.subtitle}>Test Your Click Speed</h2>
-    <div className={styles.cpsContainer}>
-      <div className={styles.clicking}>
+      <h2 className={styles.subtitle}>Test Your Click Speed</h2>
+      <div className={styles.cpsContainer}>
+        <div className={styles.clicking}>
+          <div className={styles.timer}>
+            Timer
+            <h3 className={styles.timernum}>{countdown.toFixed(2)}</h3>
+          </div>
 
-        <div className={styles.timer}>Timer
-          <h3 classname={styles.timernum}>{countdown.toFixed(2)}</h3>
+          <div className={styles.clicks}>
+            Clicks
+            <h3 className={styles.clicknum}>{clicks}</h3>
+          </div>
         </div>
 
-        <div className={styles.clicks}>Clicks
-          <h3 className={styles.clicknum}>{clicks}</h3>
+        <div>
+          <button id="cps" onClick={handleClick} className={styles.clickbutton}>
+            Click to start
+          </button>
         </div>
       </div>
-      
-      <div>
-        <button id="cps" onClick={handleClick} className={styles.clickbutton}>
-          Click to start
-        </button>
-      </div>
-    </div>
     </div>
   );
 }
-
