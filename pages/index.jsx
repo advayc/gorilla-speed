@@ -2,7 +2,6 @@ import React from 'react';
 import CPS from '@/components/cps.jsx';
 import Navbar from '@/components/navbar.jsx';
 import styles from '@/styles/Home.module.css';
-import Footer from '@/components/footer';
 
 export default function Home() {
 
@@ -17,7 +16,6 @@ export default function Home() {
             The best way to test your typing and clicking speed
           </h5>
         </div>
-        <Footer />
       </main>
   )
 }

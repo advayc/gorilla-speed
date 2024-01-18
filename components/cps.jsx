@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import styles from '@/styles/Home.module.css';
-import Footer from '@/components/Footer.jsx';
 
 export default function CPS() {
   const [clicks, setClicks] = useState(0);
@@ -76,7 +75,6 @@ export default function CPS() {
           </button>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
