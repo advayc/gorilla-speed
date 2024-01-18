@@ -5,7 +5,17 @@
     z-index: 100;
     display: flex;
     justify-content: center;
+    align-items: center; 
     margin-top: 25px;
+}
+
+.navbar-img {
+    font-size: 26px;
+    padding: 10px;
+    padding-bottom: 0;
+    padding-top: 0;
+    cursor: pointer;
+    transition: color 0.15s cubic-bezier(0.4, 0, 0.2, 1) 50ms;
 }
 
 .navbar-element {
@@ -16,9 +26,12 @@
     transition: color 0.15s cubic-bezier(0.4, 0, 0.2, 1) 50ms;
 }
 
+.navbar-img:hover {
+    color: #c084fc;
+}
+
 .navbar-text {
     padding: 10px;
-
 }
 
 .navbar-element:hover {

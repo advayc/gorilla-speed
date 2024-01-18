@@ -110,6 +110,11 @@
   line-height: 1.5; 
 }
 
+.input:active {
+  border-color: white;
+  border-style: solid;
+}
+
 .placeholder {
   position: absolute;
   transition: background-color 0.3s ease;
