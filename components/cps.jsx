@@ -50,7 +50,7 @@ export default function CPS() {
   
 
   const handleGameOver = () => {
-    window.alert(`Game over, You had: ${CPS} CPS, and your max cps was: ${maxClicks}`);
+    window.alert(`Game over, You had: ${CPS} CPS, and the max number of clicks were: ${maxClicks}`);
   };
 
   const CPS = clicks / countdown;

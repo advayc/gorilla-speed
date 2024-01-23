@@ -95,7 +95,6 @@
   align-items: center;
   padding: 10px;
   padding-bottom: 220px;
-  border: none; 
   background-color: black;
   transition: background-color 0.3s ease;
   font-size: 20px;
@@ -111,8 +110,7 @@
 }
 
 .input:active {
-  border-color: white;
-  border-style: solid;
+  border-color: black;
 }
 
 .placeholder {

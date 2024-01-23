@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from '@/styles/Home.module.css';
 
 const WPM = () => {
@@ -6,6 +6,7 @@ const WPM = () => {
   const [inputValue, setInputValue] = useState('');
   const [startTime, setStartTime] = useState(null);
   const [endTime, setEndTime] = useState(null);
+  const inputRef = useRef(null);
 
   useEffect(() => {
     const words = [ 'the', 'be', 'to', 'of', 'and', 'a', 'in', 'that', 'have', 'I', 'it', 'for', 'not', 'on', 'with', 
@@ -34,7 +35,7 @@ const WPM = () => {
     'wonder', 'laugh', 'thousand', 'ago', 'ran', 'check', 'game', 'shape', 'yes', 'hot', 'miss', 'brought', 'heat', 'snow', 
     'bed', 'bring', 'sit', 'perhaps', 'fill', 'east', 'weight', 'language', 'among', 'fine', 'ball', 'yet', 'wave', 'drop', 
     'heart', 'am', 'present', 'heavy', 'dance', ];
-    
+
     const randomWords = [];
     for (let i = 0; i < 30; i++) {
       const randomIndex = Math.floor(Math.random() * words.length);
@@ -43,6 +44,9 @@ const WPM = () => {
 
     const randomPlaceholder = randomWords.join(' ');
     setPlaceholder(randomPlaceholder);
+
+    // Automatically focus on the input element when the component mounts
+    inputRef.current.focus();
   }, []);
 
   const handleInputChange = (event) => {
@@ -66,15 +70,29 @@ const WPM = () => {
       <h2 className={styles.subtitle}>Test Your typing Speed!</h2>
       <h3 className={styles.sstitle}></h3>
       <div className={styles.textarea}>
-        <textarea id="textInput" value={inputValue} onChange={handleInputChange} className={styles.input}></textarea>
+        <input
+          id="textInput"
+          value={inputValue}
+          onChange={handleInputChange}
+          className={styles.input}
+          autoFocus
+          ref={inputRef} // Use ref to get a reference to the input element
+        />
         <div className={styles.placeholder}>
           {placeholder.split('').map((char, index) => (
-            <span key={index} style={{ color: inputValue[index] === char ? 'white' : inputValue[index] !== undefined ? 'red' : 'grey' }}>{char}</span>
+            <span
+              key={index}
+              style={{
+                color: inputValue[index] === char ? 'white' : inputValue[index] !== undefined ? 'red' : 'grey',
+              }}
+            >
+              {char}
+            </span>
           ))}
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default WPM;
