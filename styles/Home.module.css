@@ -111,7 +111,6 @@
   white-space: pre-wrap; 
   padding-bottom: 220px;
   border: none; 
-  overflow-wrap: break-word; 
   color: transparent; 
   background-color: black;
   z-index: 4;
@@ -119,10 +118,6 @@
   text-wrap: wrap;
 }
 
-.input:active {
-  border-color: black;
-  text-wrap: wrap;
-}
 
 .placeholder {
   position: absolute;
