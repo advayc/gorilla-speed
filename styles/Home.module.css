@@ -97,41 +97,35 @@
 
 .input {
   width: 100%;
-  align-items: center;
   margin-top: 20px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
+  padding: 9.98px;
   padding-bottom: 220px;
-  background-color: black;
-  transition: background-color 0.3s ease;
   font-size: 20px;
-  font-family: 'Roboto Slab', sans-serif;
-  white-space: pre-wrap; 
-  padding-bottom: 220px;
-  border: none; 
-  color: transparent; 
-  background-color: black;
-  z-index: 4;
-  line-height: 1.5; 
+  background-color: transparent;
+  line-height: 1.51; 
   text-wrap: wrap;
-}
+  border: none;
+  font-family: 'JetBrains Mono', monospace;
+  position: relative;
+  z-index: 2;
 
+}
 
 .placeholder {
   position: absolute;
+  z-index: 1;
   transition: background-color 0.3s ease;
   top: 0;
   left: 0;
-  z-index: 1;
-  font-size: 20px;
   padding: 10px; 
+  line-height: 1.5;
   font-size: 20px;
-  line-height: 1.5; 
-  text-wrap: wrap;
+  font-family: 'JetBrains Mono', monospace;
+  color: grey;
 }
 
 .textarea {
   position: relative;
+  color: transperent;
 }

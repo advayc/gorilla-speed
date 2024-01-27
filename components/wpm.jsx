@@ -98,7 +98,7 @@ const WPM = () => {
         <h3 className={styles.timernum}>{timeElapsed}</h3>
       </div>
       <div className={styles.textarea}>
-        <input
+        <textarea
           id="textInput"
           value={inputValue}
           onChange={handleInputChange}
@@ -112,7 +112,6 @@ const WPM = () => {
             <span
               key={index}
               style={{
-                color: (isComplete && index < inputValue.length) ? 'white' : inputValue[index] === char ? 'white' : inputValue[index] !== undefined ? 'red' : 'grey',
               }}
             >
               {char}
