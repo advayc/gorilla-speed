@@ -15,6 +15,7 @@ export default function Home() {
       outerAlpha={0.2}
       outerScale={2}
       trailingSpeed={5}
+      showSystemCursor='true'
     />
       <Navbar />
         <WPM />

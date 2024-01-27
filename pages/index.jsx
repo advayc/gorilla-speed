@@ -7,26 +7,14 @@ export default function Home() {
 
   return (
       <main className={styles.main}>
-    <AnimatedCursor
+      <AnimatedCursor
       innerSize={0.1}
       outerSize={30}
       color='224, 224, 224'
       outerAlpha={0.2}
-      outerScale={3}
+      outerScale={2}
       trailingSpeed={5}
-      clickables={[
-        'a',
-        'input[type="text"]',
-        'input[type="email"]',
-        'input[type="number"]',
-        'input[type="submit"]',
-        'input[type="image"]',
-        'label[for]',
-        'select',
-        'textarea',
-        'button',
-        '.link'
-      ]}
+      showSystemCursor='true'
     />
       <Navbar />
         <div className={`${styles.container} ${styles.fadeIn}`}>

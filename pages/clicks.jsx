@@ -8,13 +8,14 @@ export default function Home() {
 
   return (
       <main className={styles.main}>
-    <AnimatedCursor
+      <AnimatedCursor
       innerSize={0.1}
       outerSize={30}
       color='224, 224, 224'
       outerAlpha={0.2}
       outerScale={2}
       trailingSpeed={5}
+      showSystemCursor='true'
     />
       <Navbar />
         <CPS />
