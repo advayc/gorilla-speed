@@ -74,6 +74,13 @@
   color: white;
 }
 
+.timeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .cpsContainer {
   background-color: #191919;
   padding-right: 3rem;
@@ -109,10 +116,12 @@
   background-color: black;
   z-index: 4;
   line-height: 1.5; 
+  text-wrap: wrap;
 }
 
 .input:active {
   border-color: black;
+  text-wrap: wrap;
 }
 
 .placeholder {
@@ -125,6 +134,7 @@
   padding: 10px; 
   font-size: 20px;
   line-height: 1.5; 
+  text-wrap: wrap;
 }
 
 .textarea {

@@ -73,12 +73,12 @@ const WPM = () => {
     }
 
     if (value === placeholder) {
-      setIsTyping(false); // Stop the timer when typing is completed
-      setIsComplete(true); // Set flag to indicate typing completion
+      setIsTyping(false);
+      setIsComplete(true); 
     }
 
     if (value.length > placeholder.length) {
-      setIsComplete(false); // Reset the flag if the user deletes characters
+      setIsComplete(false); 
     }
   };
 
@@ -93,7 +93,7 @@ const WPM = () => {
   return (
     <div>
       <h2 className={styles.subtitle}>Test Your typing Speed!</h2>
-      <div className={styles.timer}>
+      <div className={styles.timeContainer}>
         Timer
         <h3 className={styles.timernum}>{timeElapsed}</h3>
       </div>
@@ -106,6 +106,7 @@ const WPM = () => {
           autoFocus
           ref={inputRef}
         />
+        
         <div className={styles.placeholder}>
           {placeholder.split('').map((char, index) => (
             <span
