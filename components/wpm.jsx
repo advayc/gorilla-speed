@@ -76,7 +76,7 @@ const WPM = () => {
           onChange={handleInputChange}
           className={styles.input}
           autoFocus
-          ref={inputRef} // Use ref to get a reference to the input element
+          ref={inputRef} 
         />
         <div className={styles.placeholder}>
           {placeholder.split('').map((char, index) => (
