@@ -56,17 +56,24 @@ h5 {
   font-weight: 100;
   display: flex;
   justify-content: center;
+  transform: scale(1.2,.999);
+
 }
 
 h1 {
-  font-size: 4.5rem;
+  font-size: 5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  transform: scale(1.1,.9);
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: 4.5rem;
   margin-top: 10rem;
   margin-bottom: 3rem;
   font-weight: 900;
+  transform: scale(1.2,.999);
+
 }
 
 @media (prefers-color-scheme: dark) {
