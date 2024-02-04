@@ -58,7 +58,7 @@ const WPM = () => {
       if (isTyping && inputValue !== placeholder && !isComplete) {
         setEndTime(Date.now());
       }
-    }, 100); // Update the timer every 100 milliseconds
+    }, 100); 
 
     return () => clearInterval(interval);
   }, [isTyping, inputValue, placeholder, isComplete]);
@@ -74,6 +74,7 @@ const WPM = () => {
 
     if (value === placeholder) {
       setIsTyping(false);
+      window.alert('Congratulations! You have completed the test!');
       setIsComplete(true); 
     }
 
