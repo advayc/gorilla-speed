@@ -58,7 +58,7 @@ const WPM = () => {
       if (isTyping && inputValue !== placeholder && !isComplete) {
         setEndTime(Date.now());
       }
-    }, 100); 
+    }, 100); // Update the timer every 100 milliseconds
 
     return () => clearInterval(interval);
   }, [isTyping, inputValue, placeholder, isComplete]);
@@ -74,12 +74,31 @@ const WPM = () => {
 
     if (value === placeholder) {
       setIsTyping(false);
-      window.alert('Congratulations! You have completed the test!');
-      setIsComplete(true); 
+      setIsComplete(true);
     }
 
     if (value.length > placeholder.length) {
-      setIsComplete(false); 
+      setIsComplete(false);
+    }
+
+    const placeholderChars = placeholder.split('');
+    const typedChars = value.split('');
+
+    const mismatchIndices = typedChars.reduce((acc, char, index) => {
+      if (char !== placeholderChars[index]) {
+        acc.push(index);
+      }
+      return acc;
+    }, []);
+
+    const inputField = document.getElementById('textInput');
+
+    if (inputField) {
+      inputField.style.color = ''; // Reset color
+
+      if (mismatchIndices.length > 0) {
+        inputField.style.color = 'red';
+      }
     }
   };
 
@@ -93,7 +112,7 @@ const WPM = () => {
 
   return (
     <div>
-      <h2 className={styles.subtitle}>Test Your typing Speed!</h2>
+      <h2 className={styles.subtitle}>Test Your Typing Speed!</h2>
       <div className={styles.timeContainer}>
         Timer
         <h3 className={styles.timernum}>{timeElapsed}</h3>
@@ -107,14 +126,10 @@ const WPM = () => {
           autoFocus
           ref={inputRef}
         />
-        
-        <div className={styles.placeholder}>
+
+        <div id="placeholder" className={styles.placeholder}>
           {placeholder.split('').map((char, index) => (
-            <span
-              key={index}
-              style={{
-              }}
-            >
+            <span key={index}>
               {char}
             </span>
           ))}
