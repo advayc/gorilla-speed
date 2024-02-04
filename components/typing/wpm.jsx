@@ -13,6 +13,13 @@ const WPM = () => {
   const inputRef = useRef(null);
   const placeholderCount = 30;
 
+  const calculateWPM = () => {
+    const minutes = (endTime - startTime) / 1000 / 60;
+    const wordsPerMinute = (placeholder.split(' ').length / minutes);
+    const netWordsPerMinute = wordsPerMinute - 2 * (inputValue.split(' ').length / minutes);
+    return netWordsPerMinute.toFixed(2);
+  };
+
   useEffect(() => {
     const randomWords = [];
     for (let i = 0; i < placeholderCount; i++) {
@@ -39,17 +46,26 @@ const WPM = () => {
   const handleInputChange = (event) => {
     const { value } = event.target;
     setInputValue(value);
-
+  
     if (!isTyping && value.length > 0) {
       setIsTyping(true);
       setStartTime(Date.now());
     }
-
+  
     if (value === placeholder) {
       setIsTyping(false);
       setIsComplete(true);
-    }
+      const wpm = calculateWPM();
+  
+      const maxWPMFromStorage = localStorage.getItem('maxWPM');
+      const maxWPM = maxWPMFromStorage ? Math.max(parseFloat(maxWPMFromStorage), parseFloat(wpm)) : parseFloat(wpm);
 
+      // Save the new maxWPM to local storage
+      localStorage.setItem('maxWPM', maxWPM);
+  
+      window.alert(`Congratulations! You have completed the typing test! Your WPM is ${wpm}. Max WPM: ${maxWPM}`);
+    }
+  
     if (value.length > placeholder.length) {
       setIsComplete(false);
     }
