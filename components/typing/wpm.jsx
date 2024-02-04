@@ -58,10 +58,13 @@ const WPM = () => {
       const wpm = calculateWPM();
   
       const maxWPMFromStorage = localStorage.getItem('maxWPM');
-      const maxWPM = maxWPMFromStorage ? Math.max(parseFloat(maxWPMFromStorage), parseFloat(wpm)) : parseFloat(wpm);
-
-      // Save the new maxWPM to local storage
-      localStorage.setItem('maxWPM', maxWPM);
+      let maxWPM = maxWPMFromStorage ? parseFloat(maxWPMFromStorage) : 0;
+  
+      // Update maxWPM if the current WPM is greater or equal
+      if (parseFloat(wpm) >= maxWPM) {
+        maxWPM = parseFloat(wpm);
+        localStorage.setItem('maxWPM', maxWPM);
+      }
   
       window.alert(`Congratulations! You have completed the typing test! Your WPM is ${wpm}. Max WPM: ${maxWPM}`);
     }
@@ -69,7 +72,7 @@ const WPM = () => {
     if (value.length > placeholder.length) {
       setIsComplete(false);
     }
-
+    
     const placeholderChars = placeholder.split('');
     const typedChars = value.split('');
 
