@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from '@/styles/Home.module.css';
-import words from './words'; 
+import words from './words';
 
 const WPM = () => {
   const [placeholder, setPlaceholder] = useState('');
@@ -9,11 +9,11 @@ const WPM = () => {
   const [endTime, setEndTime] = useState(null);
   const [isTyping, setIsTyping] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
+  const [visibleIndices, setVisibleIndices] = useState([]);
   const inputRef = useRef(null);
   const placeholderCount = 30;
 
   useEffect(() => {
-
     const randomWords = [];
     for (let i = 0; i < placeholderCount; i++) {
       const randomIndex = Math.floor(Math.random() * words.length);
@@ -31,7 +31,7 @@ const WPM = () => {
       if (isTyping && inputValue !== placeholder && !isComplete) {
         setEndTime(Date.now());
       }
-    }, 100); // Update the timer every 100 milliseconds
+    }, 100);
 
     return () => clearInterval(interval);
   }, [isTyping, inputValue, placeholder, isComplete]);
@@ -63,6 +63,8 @@ const WPM = () => {
       }
       return acc;
     }, []);
+
+    setVisibleIndices([...new Set([...visibleIndices, ...mismatchIndices])]);
 
     const inputField = document.getElementById('textInput');
 
@@ -102,7 +104,10 @@ const WPM = () => {
 
         <div id="placeholder" className={styles.placeholder}>
           {placeholder.split('').map((char, index) => (
-            <span key={index}>
+            <span
+              key={index}
+              style={{ visibility: visibleIndices.includes(index) || inputValue.length > index ? 'hidden' : 'visible' }}
+            >
               {char}
             </span>
           ))}
