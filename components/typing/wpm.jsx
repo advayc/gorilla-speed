@@ -16,7 +16,7 @@ const WPM = () => {
   const calculateWPM = () => {
     const minutes = (endTime - startTime) / 1000 / 60;
     const wordsPerMinute = (placeholder.split(' ').length / minutes);
-    const netWordsPerMinute = wordsPerMinute - 2 * (inputValue.split(' ').length / minutes);
+    const netWordsPerMinute = (wordsPerMinute - (2 * inputValue.split(' ').length) / minutes) * -1;
     return netWordsPerMinute.toFixed(2);
   };
 
