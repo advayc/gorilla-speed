@@ -74,13 +74,6 @@
   color: white;
 }
 
-.timeContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .cpsContainer {
   background-color: #191919;
   padding-right: 3rem;
