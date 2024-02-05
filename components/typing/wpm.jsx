@@ -107,10 +107,18 @@ const WPM = () => {
   return (
     <div>
       <h2 className={styles.subtitle}>Test Your Typing Speed!</h2>
-      <div className={styles.timeContainer}>
-        Timer
-        <h3 className={styles.timernum}>{timeElapsed}</h3>
-      </div>
+      <div className={styles.clicking}>
+          <div className={styles.timer}>
+            Timer
+            <h3 className={styles.timernum}>{timeElapsed}</h3>
+          </div>
+
+          <div className={styles.clicks}>
+            <button id="cps" className={styles.reset}>
+              Click to Restart
+            </button>
+          </div>
+        </div>
       <div className={styles.textarea}>
         <textarea
           id="textInput"
