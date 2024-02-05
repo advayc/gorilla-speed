@@ -23,7 +23,7 @@
     font-size: 20px;
     padding: 10px;
     cursor: pointer;
-    transition: color 0.15s cubic-bezier(0.4, 0, 0.2, 1) 50ms;
+    transition: color 0.15s cubic-bezier(0.4, 0, 0.2, 1) 50ms;  
 }
 
 .navbar-img:hover {

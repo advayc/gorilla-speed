@@ -74,6 +74,10 @@
   color: white;
 }
 
+.timernum, .clicknum {
+  color: #70dbff;
+}
+
 .cpsContainer {
   background-color: #191919;
   padding-right: 3rem;
