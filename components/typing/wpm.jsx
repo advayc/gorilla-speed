@@ -152,9 +152,7 @@ const WPM = () => {
         <div id="placeholder" className={styles.placeholder}>
           {placeholder.split('').map((char, index) => (
             <span
-              key={index}
-              style={{ visibility: visibleIndices.includes(index) || inputValue.length > index ? 'hidden' : 'visible' }}
-            >
+              key={index}>
               {char}
             </span>
           ))}
