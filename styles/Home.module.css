@@ -1,5 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+    transform: scale(1, 1);
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 350px) and (max-height: 652px) {
+  .container {
+    height: 100%; 
+  }
+  .title, .description {
+    font-size: 1.5rem; 
+  }
+}
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 0.875rem;
+  }
+}
+
+/* Existing CSS */
 .container {
   height: 100vh; 
   display: flex;
@@ -106,7 +136,6 @@
   font-family: 'JetBrains Mono', monospace;
   position: relative;
   z-index: 2;
-
 }
 
 .placeholder {
@@ -124,7 +153,7 @@
 
 .textarea {
   position: relative;
-  color: transperent;
+  color: transparent;
 }
 
 .reset {
@@ -138,5 +167,5 @@
   font-family: 'JetBrains Mono', monospace;
   font-weight: 900;
   text-transform: uppercase;
-  transform: scale(1.1,.9);
+  transform: scale(1.1, 0.9);
 }
