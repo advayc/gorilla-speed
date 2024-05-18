@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '@/components/navbar.jsx';
 import styles from '@/styles/Home.module.css';
 import AnimatedCursor from "react-animated-cursor"
-
+import { Analytics } from "@vercel/analytics/react"
 export default function Home() {
 
   return (
@@ -25,6 +25,8 @@ export default function Home() {
             The best way to test your typing and clicking speed
           </h5>
         </div>
+        <Analytics />
+
       </main>
   )
 }
